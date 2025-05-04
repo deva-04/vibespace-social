@@ -1,0 +1,10 @@
+<div class="auth-form">
+  <h3>Register</h3>
+  <form ng-submit="register()">
+    <input ng-model="user.username" placeholder="Username" required>
+    <input ng-model="user.email" type="email" placeholder="Email" required>
+    <input ng-model="user.password" type="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+  <p>Already have an account? <a href="#!/login">Login</a></p>
+</div>

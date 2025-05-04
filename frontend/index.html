@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="socialApp">
+<head>
+  <title>Mini Social App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="app.js"></script>
+  <script src="controllers/loginController.js"></script>
+  <script src="controllers/registerController.js"></script>
+  <script src="controllers/postController.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>VibeSpace</h2>
+    <div ng-if="isLoggedIn()" class="nav">
+      <a href="#!/posts">Home</a>
+      <a href="" ng-click="logout()">Logout</a>
+    </div>
+    
+    <div ng-view></div>
+  </div>
+</body>
+</html>

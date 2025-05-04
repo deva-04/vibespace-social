@@ -1,0 +1,27 @@
+<div>
+  <h3>Create Post</h3>
+  <form ng-submit="createPost()">
+    <input ng-model="newPost.title" placeholder="Title" required>
+    <textarea ng-model="newPost.content" placeholder="What's on your mind?" required></textarea>
+    <button type="submit">Post</button>
+  </form>
+
+  <h3>Feed</h3>
+  <div ng-repeat="post in posts" class="post">
+    <h4>{{post.title}} <small>by {{post.username}}</small></h4>
+    <p>{{post.content}}</p>
+    <button ng-click="likePost(post)">👍 Like ({{post.likes || 0}})</button>
+
+    <div>
+      <input ng-model="post.newComment" placeholder="Write a comment">
+      <button ng-click="commentPost(post)">Comment</button>
+    </div>
+    <ul>
+      <li ng-repeat="c in post.comments">
+        <strong>{{c.username}}:</strong> {{c.text}}
+      </li>
+    </ul>
+    <small>{{post.createdAt | date:'medium'}}</small>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+# Ignore backend dependencies and secrets
+/backend/node_modules/
+/backend/.env
+
+# Logs
+*.log
